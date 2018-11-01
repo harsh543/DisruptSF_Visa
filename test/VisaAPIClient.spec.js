@@ -132,3 +132,50 @@ describe('VisaAPIClient Helper method', () => {
     })
 
 })
+describe('PaymentProcess Helper method', () => {
+var request = require('request');
+const fs = require('fs');
+
+var req = request.defaults();
+var userId = USER_ID
+var password = PASSWD
+var certfile = "/Users/fei/Downloads/cert.pem"
+var keyfile = "/Users/fei/Downloads/key_66053e71-eabc-4489-9530-fca3209cac87.pem"
+var data =
+{
+"senderEnterpriseId": "788890",
+"receiverEnterpriseId": "V-USA-EUR-20990373-100900001-008",
+"invoiceDetails": [
+{
+"invoiceNumber": "54trtrt",
+"poNumber": "125552",
+"paymentAmount": 500,
+"paymentCurrencyIsoCode": 840,
+"notes": "For Coffee",
+"partialPayment": false
+}
+]
+}
+req.post({    
+	uri : "https://sandbox.api.visa.com/visab2bconnect/v1/payments",    
+	key: fs.readFileSync(keyfile),    
+	cert: fs.readFileSync(certfile),    
+	headers: {      
+		'Content-Type' : 'application/json',      
+		'Accept' : 'application/json',      
+		'Authorization' : 'Basic ' + new Buffer(userId + ':' + password).toString('base64')    },   
+		 body: JSON.stringify(data)
+	}, function(error, response, body) { 
+	   console.log(response.body);
+	});
+var request = require("request");
+
+var options = { method: 'POST',
+  url: 'https://api.globaldatacompany.com/verifications/v1/verify' };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+ })
