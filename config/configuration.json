@@ -1,0 +1,8 @@
+{
+  "sharedSecret": "{put your shared secret here}",
+  "visaUrl": "{put your visa endpoint here}",
+  "userId": "{put your user id here}",
+  "password": "{put your password here}",
+  "cert": "{put the path to the certificate file here}",
+  "key": "{put the path to the private key here}"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "vdp-api-nodejs-client",
+  "version": "1.0.0",
+  "description": "SDK for Node js Client to call Visa APIs",
+  "main": "lib/VisaAPIClient.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/visa/vdp-api-nodejs-client.git"
+  },
+  "keywords": [
+    "node",
+    "sdk",
+    "api",
+    "vdp"
+  ],
+  "author": "smaheshw@visa.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/visa/vdp-api-nodejs-client/issues"
+  },
+  "homepage": "https://github.com/visa/vdp-api-nodejs-client#readme",
+  "dependencies": {
+    "chai": "^4.1.0",
+    "vdp-nodejs-client": "git+https://github.com/visa/vdp-nodejs-client.git"
+  }
+}
